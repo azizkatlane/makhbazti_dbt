@@ -1,0 +1,93 @@
+version: 2
+
+sources:
+  - name: public
+    tables:
+      - name: products
+        description: "The products table containing product details."
+        columns:
+          - name: _id
+            description: "The unique identifier for the product."
+            tests:
+              - not_null
+          - name: name
+            description: "The name of the product."
+            tests:
+              - not_null
+          - name: price
+            description: "The price of the product."
+          - name: category
+            description: "The category of the product."
+          - name: weight
+            description: "The weight of the product."
+          - name: entreprise_only
+            description: "True if the product is only for enterprise."
+          - name: points
+            description: "Points associated with the product."
+          - name: created_at
+            description: "The date when the product was created."
+          - name: updated_at
+            description: "The date when the product was last updated."
+          - name: _dlt_id
+            description: "The unique identifier used for data loading tracking."
+          - name: start_date
+            description: "The start date of the data."
+          - name: end_date
+            description: "The end date of the data."
+models:
+  - name: dim_product
+    description: "Product dimension"
+    columns:
+      - name: product_sk
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: _id
+        description: "The product id"
+        tests:
+          - not_null
+      - name: name
+        description: "The name of the product"
+        tests:
+          - not_null
+      - name: price
+        description: "The price of the product"
+        tests:
+          - not_null
+      - name: category
+        description: "The category of the product"
+        tests:
+          - not_null
+      - name: weight
+        description: "The weight of the product"
+        tests:
+          - not_null
+      - name: entreprise_only
+        description: "True if the product is only for enterprise"
+        tests:
+          - not_null
+      - name: points
+        description: "Points of the product"
+        tests:
+          - not_null
+      - name: created_at
+        description: "Date when the product was created"
+        tests:
+          - not_null
+      - name: updated_at
+        description: "Date when the product was updated"
+        tests:
+          - not_null
+      - name: _dlt_id
+        description: "Row ID"
+        tests:
+          - not_null
+      - name: start_date
+        description: "Start date of the data"
+        tests:
+          - not_null
+      - name: end_date
+        description: "End date of the data"
+        tests:
+          - not_null 
