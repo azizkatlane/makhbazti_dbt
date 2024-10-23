@@ -1,21 +1,14 @@
-# Use a Python base image
-FROM python:3.10-slim-buster
+# Base image with Python 3.10.12
+FROM python:3.10.12-slim
 
-# Set working directory
-WORKDIR /usr/src/dbt
-
-# Copy the entire dbt project directory into the container
-COPY ./makhbazti_modeling  .
+# Set the working directory
+WORKDIR /app
 
 # Copy requirements.txt and install dependencies
 COPY requirements.txt .
-RUN pip install -r requirements.txt
 
-# Copy profiles.yml into the correct location
-RUN mkdir -p /root/.dbt
-COPY profiles.yml /root/.dbt/profiles.yml
+RUN pip install --no-cache-dir -r requirements.txt
 
-WORKDIR /usr/src/dbt/makhbazti_modeling/
-
-# Run dbt commands
-CMD dbt deps && dbt build --profiles-dir /root/.dbt/profiles.yml && sleep infinity
+COPY EL_pipeline_runner.sh /app/EL_pipeline_runner.sh
+COPY dbt_modeling.sh /app/dbt_modeling.sh
+COPY weather_pipe.sh /app/weather_pipe.sh

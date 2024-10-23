@@ -1,0 +1,352 @@
+version: 7
+version_hash: ZFtvi4+GyAyeAb/0oqbQvf5GeO7oG8uzkwyH/7vRQtA=
+engine_version: 9
+name: mongodb
+tables:
+  _dlt_version:
+    columns:
+      version:
+        data_type: bigint
+        nullable: false
+      engine_version:
+        data_type: bigint
+        nullable: false
+      inserted_at:
+        data_type: timestamp
+        nullable: false
+      schema_name:
+        data_type: text
+        nullable: false
+      version_hash:
+        data_type: text
+        nullable: false
+      schema:
+        data_type: text
+        nullable: false
+    write_disposition: skip
+    description: Created by DLT. Tracks schema updates
+  _dlt_loads:
+    columns:
+      load_id:
+        data_type: text
+        nullable: false
+      schema_name:
+        data_type: text
+        nullable: true
+      status:
+        data_type: bigint
+        nullable: false
+      inserted_at:
+        data_type: timestamp
+        nullable: false
+      schema_version_hash:
+        data_type: text
+        nullable: true
+    write_disposition: skip
+    description: Created by DLT. Tracks completed loads
+  sales:
+    columns:
+      _id:
+        nullable: false
+        primary_key: true
+    write_disposition: append
+  _dlt_pipeline_state:
+    columns:
+      version:
+        data_type: bigint
+        nullable: false
+      engine_version:
+        data_type: bigint
+        nullable: false
+      pipeline_name:
+        data_type: text
+        nullable: false
+      state:
+        data_type: text
+        nullable: false
+      created_at:
+        data_type: timestamp
+        nullable: false
+      version_hash:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    write_disposition: append
+    file_format: preferred
+    x-normalizer:
+      seen-data: true
+  employees:
+    columns:
+      _id:
+        nullable: false
+        primary_key: true
+        data_type: text
+      name:
+        data_type: text
+        nullable: true
+      verified:
+        data_type: bool
+        nullable: true
+      is_active:
+        data_type: bool
+        nullable: true
+      store_id:
+        data_type: text
+        nullable: true
+      created_at:
+        data_type: timestamp
+        nullable: true
+      updated_at:
+        dedup_sort: desc
+        data_type: timestamp
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    write_disposition: merge
+    x-merge-strategy: delete-insert
+    x-normalizer:
+      seen-data: true
+  payment_methods:
+    columns:
+      updated_at:
+        dedup_sort: desc
+      _id:
+        nullable: false
+        primary_key: true
+        data_type: text
+      name:
+        data_type: text
+        nullable: true
+      description:
+        data_type: text
+        nullable: true
+      barcode:
+        data_type: text
+        nullable: true
+      type:
+        data_type: bigint
+        nullable: true
+      currency_code:
+        data_type: text
+        nullable: true
+      image_url:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    write_disposition: merge
+    resource: paymentMethods
+    x-merge-strategy: delete-insert
+    x-normalizer:
+      seen-data: true
+  products:
+    columns:
+      price:
+        data_type: double
+        nullable: true
+      _id:
+        nullable: false
+        primary_key: true
+        data_type: text
+      name:
+        data_type: text
+        nullable: true
+      selling_by_piece:
+        data_type: bool
+        nullable: true
+      category:
+        data_type: bigint
+        nullable: true
+      weight:
+        data_type: bigint
+        nullable: true
+      store_id:
+        data_type: text
+        nullable: true
+      description:
+        data_type: text
+        nullable: true
+      points:
+        data_type: bigint
+        nullable: true
+      image_url:
+        data_type: text
+        nullable: true
+      ratings_reviewers:
+        data_type: bigint
+        nullable: true
+      ratings_total_points:
+        data_type: bigint
+        nullable: true
+      durations_preparing:
+        data_type: bigint
+        nullable: true
+      durations_fermenting:
+        data_type: bigint
+        nullable: true
+      durations_cooking:
+        data_type: bigint
+        nullable: true
+      durations_lifetime:
+        data_type: bigint
+        nullable: true
+      created_at:
+        data_type: timestamp
+        nullable: true
+      updated_at:
+        dedup_sort: desc
+        data_type: timestamp
+        nullable: true
+      code:
+        data_type: bigint
+        nullable: true
+      sales_count:
+        data_type: bigint
+        nullable: true
+      variants_0_size:
+        data_type: text
+        nullable: true
+      variants_1_size:
+        data_type: text
+        nullable: true
+      variants_2_size:
+        data_type: text
+        nullable: true
+      variants_3_size:
+        data_type: text
+        nullable: true
+      variants_4_size:
+        data_type: text
+        nullable: true
+      variants_5_size:
+        data_type: text
+        nullable: true
+      variants_0_price:
+        data_type: text
+        nullable: true
+      variants_1_price:
+        data_type: text
+        nullable: true
+      variants_2_price:
+        data_type: text
+        nullable: true
+      variants_3_price:
+        data_type: text
+        nullable: true
+      variants_4_price:
+        data_type: text
+        nullable: true
+      variants_5_price:
+        data_type: text
+        nullable: true
+      variants_0_unit:
+        data_type: text
+        nullable: true
+      variants_1_unit:
+        data_type: text
+        nullable: true
+      variants_2_unit:
+        data_type: text
+        nullable: true
+      variants_3_unit:
+        data_type: text
+        nullable: true
+      variants_4_unit:
+        data_type: text
+        nullable: true
+      variants_5_unit:
+        data_type: text
+        nullable: true
+      variants_0_name:
+        data_type: text
+        nullable: true
+      variants_1_name:
+        data_type: text
+        nullable: true
+      variants_2_name:
+        data_type: text
+        nullable: true
+      variants_3_name:
+        data_type: text
+        nullable: true
+      variants_4_name:
+        data_type: text
+        nullable: true
+      variants_5_name:
+        data_type: text
+        nullable: true
+      ingredients_0_id:
+        data_type: text
+        nullable: true
+      ingredients_0_name:
+        data_type: text
+        nullable: true
+      ingredients_0_quantity_needed_value:
+        data_type: text
+        nullable: true
+      ingredients_0_quantity_needed_unit:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    write_disposition: merge
+    x-merge-strategy: delete-insert
+    x-normalizer:
+      seen-data: true
+settings:
+  detections:
+  - iso_timestamp
+  default_hints:
+    not_null:
+    - _dlt_id
+    - _dlt_root_id
+    - _dlt_parent_id
+    - _dlt_list_idx
+    - _dlt_load_id
+    foreign_key:
+    - _dlt_parent_id
+    root_key:
+    - _dlt_root_id
+    unique:
+    - _dlt_id
+normalizers:
+  names: snake_case
+  json:
+    module: dlt.common.normalizers.json.relational
+    config:
+      propagation:
+        tables:
+          employees:
+            _dlt_id: _dlt_root_id
+          payment_methods:
+            _dlt_id: _dlt_root_id
+          products:
+            _dlt_id: _dlt_root_id
+previous_hashes:
+- GxsFLU4IlbPQxYs6CnCya7DT9sJQD3Xw96zeMCJLOAg=
+- bt9+RjDP/xptG/lCPLEBXlU/zeInU38hZoqv9pqCY/0=
+- vaQD9LSi96LI3WWMHaHEivjFjnGhuWL2Y5F6fYxJIkQ=
+- jFbWWthUPs9WAmzA4Z/2aumnrCmg1bXKDmcyAOn3RmQ=
+- vaqWgV06lpy8X8J9dKOb3LBESZvsjXcGRszX010uHos=
+- D8SdLk6Hn2H3COr4GP1kNQilr5jnpL86tXdIGHfYVFw=

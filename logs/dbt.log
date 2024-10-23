@@ -1,12 +1,12 @@
-[0m18:42:33.499738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb2a71fd4b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb2a57dc850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb2a57dc8b0>]}
+[0m11:47:35.017424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7686d336eaa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7686d2d34fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7686d19cf730>]}
 
 
-============================== 18:42:33.502321 | 8faabf63-1420-4188-ac81-cfbcb6cd5eb4 ==============================
-[0m18:42:33.502321 [info ] [MainThread]: Running with dbt=1.8.3
-[0m18:42:33.502804 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/kazeka/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
-[0m18:42:42.139156 [debug] [MainThread]: Starter project path: /home/kazeka/.local/lib/python3.10/site-packages/dbt/include/starter_project
-[0m18:42:42.152070 [info ] [MainThread]: 
-Your new dbt project "makhbazti_dbt" was created!
+============================== 11:47:35.024251 | 16d405c5-edbd-4f95-ae37-42c564cff257 ==============================
+[0m11:47:35.024251 [info ] [MainThread]: Running with dbt=1.8.3
+[0m11:47:35.024704 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': '/home/kazeka/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt init', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:47:43.119021 [debug] [MainThread]: Starter project path: /home/kazeka/.local/lib/python3.10/site-packages/dbt/include/starter_project
+[0m11:47:43.133470 [info ] [MainThread]: 
+Your new dbt project "Modeling" was created!
 
 For more information on how to configure the profiles.yml file,
 please consult the dbt documentation here:
@@ -21,9 +21,89 @@ Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
 
 Happy modeling!
 
-[0m18:42:42.153935 [info ] [MainThread]: Setting up your profile.
-[0m18:43:50.127045 [info ] [MainThread]: Profile makhbazti_dbt written to /home/kazeka/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
-[0m18:43:50.130644 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 76.68842, "process_user_time": 1.493291, "process_kernel_time": 1.133366, "process_mem_max_rss": "113692", "process_in_blocks": "116656", "process_out_blocks": "88"}
-[0m18:43:50.133264 [debug] [MainThread]: Command `dbt init` succeeded at 18:43:50.132726 after 76.69 seconds
-[0m18:43:50.135423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb2a71fd4b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb2a57b5c30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cb2a57dc760>]}
-[0m18:43:50.137153 [debug] [MainThread]: Flushing usage events
+[0m11:47:43.135374 [info ] [MainThread]: Setting up your profile.
+[0m11:51:46.285547 [info ] [MainThread]: Profile Modeling written to /home/kazeka/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m11:51:46.288722 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 251.32674, "process_user_time": 1.445037, "process_kernel_time": 1.163275, "process_mem_max_rss": "114428", "process_in_blocks": "94288", "process_out_blocks": "88"}
+[0m11:51:46.291259 [debug] [MainThread]: Command `dbt init` succeeded at 11:51:46.290678 after 251.33 seconds
+[0m11:51:46.293245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7686d336eaa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7686d195e320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7686d1a65a80>]}
+[0m11:51:46.294994 [debug] [MainThread]: Flushing usage events
+[0m11:59:33.114451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bab8572ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bab6bd7dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bab6bd7f70>]}
+
+
+============================== 11:59:33.116553 | 126ddcf8-828f-4114-ba33-269d73b7619f ==============================
+[0m11:59:33.116553 [info ] [MainThread]: Running with dbt=1.8.3
+[0m11:59:33.117043 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/kazeka/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m11:59:33.117495 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/kazeka/dlt_test/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:59:33.118180 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.05774102, "process_user_time": 1.387755, "process_kernel_time": 0.998702, "process_mem_max_rss": "109892", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m11:59:33.118666 [debug] [MainThread]: Command `dbt run` failed at 11:59:33.118576 after 0.06 seconds
+[0m11:59:33.119005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bab8572ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bab6bd5720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70bab6bd7df0>]}
+[0m11:59:33.119346 [debug] [MainThread]: Flushing usage events
+[0m14:11:50.826526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be6616ece0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be64856350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be648563b0>]}
+
+
+============================== 14:11:50.829355 | 42412f8b-e97c-4326-aafe-447878f6e8b9 ==============================
+[0m14:11:50.829355 [info ] [MainThread]: Running with dbt=1.8.3
+[0m14:11:50.830104 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/kazeka/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m14:11:50.830735 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/kazeka/dlt_test/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m14:11:50.831689 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.07678421, "process_user_time": 2.120741, "process_kernel_time": 1.162987, "process_mem_max_rss": "109664", "process_in_blocks": "82104", "process_out_blocks": "8", "command_success": false}
+[0m14:11:50.832500 [debug] [MainThread]: Command `dbt run` failed at 14:11:50.832387 after 0.08 seconds
+[0m14:11:50.832964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be6616ece0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be648562c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be64856380>]}
+[0m14:11:50.833427 [debug] [MainThread]: Flushing usage events
+[0m23:47:02.760484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73f7f7212ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73f7f6bf2500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73f7f5870f40>]}
+
+
+============================== 23:47:02.762628 | d3cb1c28-b7ce-4421-af1a-96053bbfae3b ==============================
+[0m23:47:02.762628 [info ] [MainThread]: Running with dbt=1.8.3
+[0m23:47:02.763116 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/kazeka/.dbt', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt deps', 'send_anonymous_usage_stats': 'True'}
+[0m23:47:02.763695 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/kazeka/dlt_test/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:47:02.764391 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_wall_clock_time": 0.05769114, "process_user_time": 1.427166, "process_kernel_time": 0.960746, "process_mem_max_rss": "110256", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m23:47:02.764889 [debug] [MainThread]: Command `dbt deps` failed at 23:47:02.764798 after 0.06 seconds
+[0m23:47:02.765242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73f7f7212ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73f7f5873b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73f7f5873520>]}
+[0m23:47:02.765591 [debug] [MainThread]: Flushing usage events
+[0m09:26:39.778852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ad6bb76cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ad6a1d7ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ad6a1d7e80>]}
+
+
+============================== 09:26:39.781475 | de7b40a8-24c5-4371-974b-b99db845adc9 ==============================
+[0m09:26:39.781475 [info ] [MainThread]: Running with dbt=1.8.3
+[0m09:26:39.782104 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/kazeka/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m09:26:39.793505 [info ] [MainThread]: dbt version: 1.8.3
+[0m09:26:39.793989 [info ] [MainThread]: python version: 3.10.12
+[0m09:26:39.794335 [info ] [MainThread]: python path: /usr/bin/python
+[0m09:26:39.794650 [info ] [MainThread]: os info: Linux-6.5.0-1025-oem-x86_64-with-glibc2.35
+[0m09:26:39.870830 [info ] [MainThread]: Using profiles dir at /home/kazeka/.dbt
+[0m09:26:39.871261 [info ] [MainThread]: Using profiles.yml file at /home/kazeka/.dbt/profiles.yml
+[0m09:26:39.871575 [info ] [MainThread]: Using dbt_project.yml file at /home/kazeka/dlt_test/dbt_project.yml
+[0m09:26:39.872024 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m09:26:39.872695 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.14843263, "process_user_time": 1.418446, "process_kernel_time": 1.11392, "process_mem_max_rss": "114868", "process_in_blocks": "94672", "process_out_blocks": "8", "command_success": false}
+[0m09:26:39.873197 [debug] [MainThread]: Command `dbt debug` failed at 09:26:39.873107 after 0.15 seconds
+[0m09:26:39.873547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ad6bb76cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ad6a15fa90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ad6a252530>]}
+[0m09:26:39.873904 [debug] [MainThread]: Flushing usage events
+[0m10:54:18.675850 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78479f116c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78479d77a410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78479d77a830>]}
+
+
+============================== 10:54:18.678285 | 12f254f6-0296-4f26-9cbd-d3131158346e ==============================
+[0m10:54:18.678285 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:54:18.678736 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/kazeka/.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:54:18.679182 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/kazeka/dlt_test/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m10:54:18.679852 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.058324218, "process_user_time": 1.481646, "process_kernel_time": 0.998413, "process_mem_max_rss": "109532", "process_in_blocks": "82224", "process_out_blocks": "8", "command_success": false}
+[0m10:54:18.680340 [debug] [MainThread]: Command `dbt run` failed at 10:54:18.680248 after 0.06 seconds
+[0m10:54:18.680684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78479f116c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78479d77a920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78479d77a110>]}
+[0m10:54:18.681032 [debug] [MainThread]: Flushing usage events

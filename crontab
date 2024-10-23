@@ -1,0 +1,10 @@
+
+0 0 * * 4 /bin/bash /app/EL_pipeline_runner.sh >> /var/log/El_pipeline_runner.log 2>&1
+
+
+15 0 * * 4 /bin/bash /app/dbt_modeling.sh >> /var/log/dbt_modeling.log 2>&1
+
+# Run weather_script.sh every 2 days at 4:00 AM
+0 0 * * 7 /bin/bash /app/weather_pipe.sh >> /var/log/weather_pipe.log 2>&1
+
+# Important: Add a newline at the end of the file

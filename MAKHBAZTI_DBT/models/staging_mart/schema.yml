@@ -1,0 +1,62 @@
+version: 2
+
+sources:
+  - name: public
+    database: final_test
+    schema: public
+    tables:
+      - name: products
+        description: "The products table containing product details."
+        
+      - name: employees
+        database: dlt_test
+        schema: public
+        description: "The employees table containing employee details."
+        
+      - name: payment_methods
+        database: dlt_test
+        schema: public
+        description: "The payment methods table containing payment method details."
+        
+        
+      - name: stores
+        database: dlt_test
+        schema : public
+        description: "The stores table containing store details."
+      - name: sales
+        database: dlt_test
+        schema : public
+        description: "The sales table containing sales details."
+      - name: sales__products
+      - name: stores__accepted_payment_methods
+        database: dlt_test
+        schema : public
+      - name: products_snapshot
+        schema: snapshots
+      - name: stores_snapshot
+        schema: snapshots
+      - name: employees_snapshot
+        schema: snapshots
+      - name: stores__location__coordinates
+        schema: public
+      - name : Tunisia_Holidays
+        schema: public
+
+models:
+  - name: stg_dim_products
+    description: "Product dimension"
+    
+
+  - name: stg_dim_employees
+    description: "Employee dimension table"
+
+  - name: stg_dim_payment_methods
+    description: "Payment method dimension table"
+    
+
+  - name: stg_sales
+    description: "store sales with reference to sales__products and sales__payments__methods"
+  - name: stg_sales__products
+  - name: stg_sales__payment_methods
+  - name: stg_fact_sales
+  - name: Tunisia_Holidays

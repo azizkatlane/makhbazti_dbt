@@ -1,0 +1,408 @@
+version: 11
+version_hash: f+IGFM78CYnZIQH4f9C7BI1eQ5SNMb1WmUW6hEz3QTA=
+engine_version: 9
+name: weather_dlt_api
+tables:
+  _dlt_version:
+    columns:
+      version:
+        data_type: bigint
+        nullable: false
+      engine_version:
+        data_type: bigint
+        nullable: false
+      inserted_at:
+        data_type: timestamp
+        nullable: false
+      schema_name:
+        data_type: text
+        nullable: false
+      version_hash:
+        data_type: text
+        nullable: false
+      schema:
+        data_type: text
+        nullable: false
+    write_disposition: skip
+    description: Created by DLT. Tracks schema updates
+  _dlt_loads:
+    columns:
+      load_id:
+        data_type: text
+        nullable: false
+      schema_name:
+        data_type: text
+        nullable: true
+      status:
+        data_type: bigint
+        nullable: false
+      inserted_at:
+        data_type: timestamp
+        nullable: false
+      schema_version_hash:
+        data_type: text
+        nullable: true
+    write_disposition: skip
+    description: Created by DLT. Tracks completed loads
+  weather:
+    columns:
+      latitude:
+        data_type: double
+        nullable: true
+      longitude:
+        data_type: double
+        nullable: true
+      generationtime_ms:
+        data_type: double
+        nullable: true
+      utc_offset_seconds:
+        data_type: bigint
+        nullable: true
+      timezone:
+        data_type: text
+        nullable: true
+      timezone_abbreviation:
+        data_type: text
+        nullable: true
+      elevation:
+        data_type: double
+        nullable: true
+      daily_units__time:
+        data_type: text
+        nullable: true
+      daily_units__weather_code:
+        data_type: text
+        nullable: true
+      daily_units__temperature_2m_max:
+        data_type: text
+        nullable: true
+      daily_units__temperature_2m_min:
+        data_type: text
+        nullable: true
+      daily_units__temperature_2m_mean:
+        data_type: text
+        nullable: true
+      daily_units__apparent_temperature_max:
+        data_type: text
+        nullable: true
+      daily_units__apparent_temperature_min:
+        data_type: text
+        nullable: true
+      daily_units__apparent_temperature_mean:
+        data_type: text
+        nullable: true
+      daily_units__daylight_duration:
+        data_type: text
+        nullable: true
+      daily_units__precipitation_sum:
+        data_type: text
+        nullable: true
+      daily_units__rain_sum:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      location_id:
+        data_type: bigint
+        nullable: true
+      region:
+        data_type: text
+        nullable: true
+    write_disposition: append
+    x-normalizer:
+      seen-data: true
+  _dlt_pipeline_state:
+    columns:
+      version:
+        data_type: bigint
+        nullable: false
+      engine_version:
+        data_type: bigint
+        nullable: false
+      pipeline_name:
+        data_type: text
+        nullable: false
+      state:
+        data_type: text
+        nullable: false
+      created_at:
+        data_type: timestamp
+        nullable: false
+      version_hash:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    write_disposition: append
+    file_format: preferred
+    x-normalizer:
+      seen-data: true
+  weather__daily__time:
+    columns:
+      value:
+        data_type: text
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__weather_code:
+    columns:
+      value:
+        data_type: bigint
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__temperature_2m_max:
+    columns:
+      value:
+        data_type: double
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__temperature_2m_min:
+    columns:
+      value:
+        data_type: double
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__temperature_2m_mean:
+    columns:
+      value:
+        data_type: double
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__apparent_temperature_max:
+    columns:
+      value:
+        data_type: double
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__apparent_temperature_min:
+    columns:
+      value:
+        data_type: double
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__apparent_temperature_mean:
+    columns:
+      value:
+        data_type: double
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__daylight_duration:
+    columns:
+      value:
+        data_type: double
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__precipitation_sum:
+    columns:
+      value:
+        data_type: double
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__rain_sum:
+    columns:
+      value:
+        data_type: double
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+  weather__daily__weather_description:
+    columns:
+      value:
+        data_type: text
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+    parent: weather
+    x-normalizer:
+      seen-data: true
+settings:
+  detections:
+  - iso_timestamp
+  default_hints:
+    not_null:
+    - _dlt_id
+    - _dlt_root_id
+    - _dlt_parent_id
+    - _dlt_list_idx
+    - _dlt_load_id
+    foreign_key:
+    - _dlt_parent_id
+    root_key:
+    - _dlt_root_id
+    unique:
+    - _dlt_id
+normalizers:
+  names: snake_case
+  json:
+    module: dlt.common.normalizers.json.relational
+previous_hashes:
+- tpJoBFTVPseMFgC5Yuh9Ue1dMXo++WrvYPbWxJJ/PIU=
+- OU8bRpQNdl4wQ2s+Gw1p1X/399w/HpfaqhKjW2PaUj0=
+- VOkA3WIoEciUYkKysfSpgIoPXVzTb2O1ukBA4KYC5kY=
+- tkCIRvcU+vho+3I5yRWc/lv/fRKFNXB3MQJBBgDDLu8=
+- T536zeaaLa0gBqtARMGz5togsHI6Rrn8TMqHd9PXDs4=
+- fLhoJgpTDRyoiMdHHk5Y1sQsRhtSNCeQUlvoeo3oYPY=
+- nSNDrCK90QvUXzJg9OGZEIjAy2YFvfIVWEoQIp3MREM=
+- KAYzc9W3aOE3se+WCxYg5EPvwjgNdiYk8EC9AWSZm+4=
+- fcODLE/wekmHZTg0HFVNuvQoQpFVQrSMURWerlCrcb0=
+- +64madtBjZM7hdHn378v5vKAnVm2iCi5Xt1qxHnTT30=

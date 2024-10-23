@@ -1,0 +1,284 @@
+version: 2
+version_hash: zjBjc/wD18MT1fkkssb2rAQRODGV6Z5mV0o1HGka0/A=
+engine_version: 9
+name: loading_stores
+tables:
+  _dlt_version:
+    columns:
+      version:
+        data_type: bigint
+        nullable: false
+      engine_version:
+        data_type: bigint
+        nullable: false
+      inserted_at:
+        data_type: timestamp
+        nullable: false
+      schema_name:
+        data_type: text
+        nullable: false
+      version_hash:
+        data_type: text
+        nullable: false
+      schema:
+        data_type: text
+        nullable: false
+    write_disposition: skip
+    description: Created by DLT. Tracks schema updates
+  _dlt_loads:
+    columns:
+      load_id:
+        data_type: text
+        nullable: false
+      schema_name:
+        data_type: text
+        nullable: true
+      status:
+        data_type: bigint
+        nullable: false
+      inserted_at:
+        data_type: timestamp
+        nullable: false
+      schema_version_hash:
+        data_type: text
+        nullable: true
+    write_disposition: skip
+    description: Created by DLT. Tracks completed loads
+  stores:
+    columns:
+      _id:
+        nullable: false
+        primary_key: true
+        data_type: text
+      owner_id:
+        data_type: text
+        nullable: true
+      type:
+        data_type: text
+        nullable: true
+      currency:
+        data_type: text
+        nullable: true
+      address:
+        data_type: text
+        nullable: true
+      pack:
+        data_type: bigint
+        nullable: true
+      max_delay:
+        data_type: bigint
+        nullable: true
+      location__type:
+        data_type: text
+        nullable: true
+      phone:
+        data_type: text
+        nullable: true
+      auto_accept_authorized_entreprise_orders:
+        data_type: bool
+        nullable: true
+      display_entreprise_name_on_order:
+        data_type: bool
+        nullable: true
+      ratings__reviewers:
+        data_type: bigint
+        nullable: true
+      ratings__total_points:
+        data_type: bigint
+        nullable: true
+      positive_trend_threshold:
+        data_type: bigint
+        nullable: true
+      negative_trend_threshold:
+        data_type: bigint
+        nullable: true
+      updated_at:
+        dedup_sort: desc
+        data_type: timestamp
+        nullable: true
+      _v:
+        data_type: bigint
+        nullable: true
+      best_product_id:
+        data_type: text
+        nullable: true
+      image_url:
+        data_type: text
+        nullable: true
+      name:
+        data_type: text
+        nullable: true
+      gouvernorat:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    write_disposition: merge
+    x-merge-strategy: delete-insert
+    x-normalizer:
+      seen-data: true
+  _dlt_pipeline_state:
+    columns:
+      version:
+        data_type: bigint
+        nullable: false
+      engine_version:
+        data_type: bigint
+        nullable: false
+      pipeline_name:
+        data_type: text
+        nullable: false
+      state:
+        data_type: text
+        nullable: false
+      created_at:
+        data_type: timestamp
+        nullable: false
+      version_hash:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    write_disposition: append
+    file_format: preferred
+    x-normalizer:
+      seen-data: true
+  stores__location__coordinates:
+    columns:
+      value:
+        data_type: text
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+      _dlt_root_id:
+        data_type: text
+        nullable: false
+        root_key: true
+    parent: stores
+    x-normalizer:
+      seen-data: true
+  stores__employees:
+    columns:
+      value:
+        data_type: text
+        nullable: true
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+      _dlt_root_id:
+        data_type: text
+        nullable: false
+        root_key: true
+    parent: stores
+    x-normalizer:
+      seen-data: true
+  stores__working_days:
+    columns:
+      open:
+        data_type: timestamp
+        nullable: true
+      close:
+        data_type: timestamp
+        nullable: true
+      _dlt_root_id:
+        data_type: text
+        nullable: false
+        root_key: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    parent: stores
+    x-normalizer:
+      seen-data: true
+  stores__accepted_payment_methods:
+    columns:
+      id:
+        data_type: text
+        nullable: true
+      fees_percentage:
+        data_type: bigint
+        nullable: true
+      _id:
+        data_type: text
+        nullable: true
+      _dlt_root_id:
+        data_type: text
+        nullable: false
+        root_key: true
+      _dlt_parent_id:
+        data_type: text
+        nullable: false
+        foreign_key: true
+      _dlt_list_idx:
+        data_type: bigint
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    parent: stores
+    x-normalizer:
+      seen-data: true
+settings:
+  detections:
+  - iso_timestamp
+  default_hints:
+    not_null:
+    - _dlt_id
+    - _dlt_root_id
+    - _dlt_parent_id
+    - _dlt_list_idx
+    - _dlt_load_id
+    foreign_key:
+    - _dlt_parent_id
+    root_key:
+    - _dlt_root_id
+    unique:
+    - _dlt_id
+normalizers:
+  names: snake_case
+  json:
+    module: dlt.common.normalizers.json.relational
+    config:
+      propagation:
+        tables:
+          stores:
+            _dlt_id: _dlt_root_id
+previous_hashes:
+- iiRG7jyXnUKGUFj3L+zDry+gWHivpXOr0A+jfipTRyk=
+- I/IIcimtAQ/4zkG4JlK76W5Jl0i3aUWMS7zsXPQviMg=
