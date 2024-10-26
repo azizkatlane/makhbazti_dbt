@@ -7,6 +7,8 @@ WORKDIR /app
 # Copy requirements.txt and install dependencies
 COPY requirements.txt .
 
+COPY profiles.yml /root/.dbt/profiles.yml
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 RUN apt-get update && apt-get install -y cron && rm -rf /var/lib/apt/lists/*

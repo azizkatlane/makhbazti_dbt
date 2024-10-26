@@ -1,0 +1,12 @@
+makhbazti_dbt:
+  target: dev
+  outputs:
+    dev:
+      dbname: "${DBT_DBNAME}"
+      host: "${DBT_HOST}"
+      pass: "${DBT_PASSWORD}"
+      port: "${DBT_PORT}"
+      schema: "${DBT_SCHEMA}"
+      threads: "${DBT_THREADS}"
+      type: postgres
+      user: "${DBT_USER}"
