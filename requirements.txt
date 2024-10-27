@@ -8,5 +8,4 @@ requests-cache
 retry-requests 
 numpy 
 pandas
-dotenv
 geopy
