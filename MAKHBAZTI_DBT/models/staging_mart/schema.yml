@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: public
-    database: final_test
+    database: makhbazi_dwh
     schema: public
     tables:
       - name: products

@@ -40,7 +40,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true  # Set to true to push the image to GHCR
-          tags: ghcr.io/${{ github.repository_owner }}/makhbazti_elt:latest
+          tags: ghcr.io/${{ github.repository_owner | toLower }} /makhbazti_elt:latest
 
       # Step 5: Optional - Deploy the Docker container (if applicable)
       - name: Deploy to Environment

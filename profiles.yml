@@ -2,11 +2,11 @@ makhbazti_dbt:
   target: dev
   outputs:
     dev:
-      dbname: "${DBT_DBNAME}"
-      host: "${DBT_HOST}"
-      pass: "${DBT_PASSWORD}"
-      port: "${DBT_PORT}"
-      schema: "${DBT_SCHEMA}"
-      threads: "${DBT_THREADS}"
+      dbname: "{{ env_var('DBT_DBNAME', 'default_db_name') }}"  # Use 'default_db_name' if DBT_DBNAME is not set
+      host: "{{ env_var('DBT_HOST', 'localhost') }}"
+      pass: "{{ env_var('DBT_PASSWORD', 'your_password') }}"
+      port: "{{ env_var('DBT_PORT', '5432') }}"
+      schema: "{{ env_var('DBT_SCHEMA', 'default_schema') }}"
+      threads: 10
       type: postgres
-      user: "${DBT_USER}"
+      user: "{{ env_var('DBT_USER', 'postgres') }}"
