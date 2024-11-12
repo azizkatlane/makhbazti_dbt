@@ -1,8 +1,5 @@
-1. .dlt / secrets.toml
-contains destination and source credentials
+ENVIRONMENT VARIABLES
 
-2. DBT Configuration (~/.dbt/profiles.yml)
-The profiles.yml file is used by DBT to store connection details to the destination database where the transformed data will be written. This file allows DBT to know how to connect to your target database for running the transformations.
-
-Location:
-~/.dbt/profiles.yml
+Example setting up:
+export SOURCES__MONGODB__CONNECTION_URL="mongodb://dbuser:passwd@host.or.ip:27017"
+export DESTINATION__POSTGRES__CREDENTIALS="postgresql://username:password@host:port/database"
