@@ -4,20 +4,3 @@
 **/__pycache__/
 **/*.py[cod]
 **/*$py.class
-
-# Python virtual environment
-env/
-venv/
-.env/
-.venv/
-
-# Python bytecode and cache
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Distribution / packaging
-*.so
-*.pyd
-*.dll
-*.dylib
