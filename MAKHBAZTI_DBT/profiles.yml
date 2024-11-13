@@ -1,0 +1,12 @@
+makhbazti_dbt:
+  target: dev
+  outputs:
+    dev:
+      dbname: "{{ env_var('DBT_DB') }}"
+      host: "{{ env_var('DBT_HOST') }}"
+      pass: "{{ env_var('DBT_PASSWORD') }}"
+      port: 5432
+      schema: sales_mart
+      threads: 10
+      type: postgres
+      user: postgres

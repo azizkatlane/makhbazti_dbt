@@ -1,4 +1,4 @@
-version: 7
+version: 11
 version_hash: ZFtvi4+GyAyeAb/0oqbQvf5GeO7oG8uzkwyH/7vRQtA=
 engine_version: 9
 name: mongodb
@@ -344,6 +344,7 @@ normalizers:
           products:
             _dlt_id: _dlt_root_id
 previous_hashes:
+- ZFtvi4+GyAyeAb/0oqbQvf5GeO7oG8uzkwyH/7vRQtA=
 - GxsFLU4IlbPQxYs6CnCya7DT9sJQD3Xw96zeMCJLOAg=
 - bt9+RjDP/xptG/lCPLEBXlU/zeInU38hZoqv9pqCY/0=
 - vaQD9LSi96LI3WWMHaHEivjFjnGhuWL2Y5F6fYxJIkQ=
