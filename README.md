@@ -1,3 +1,5 @@
+### DEPRECATED!!
+
 #### ENVIRONMENT VARIABLES
 
 when using exportable env variables make sure secrets.toml is empty
